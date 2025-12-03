@@ -360,9 +360,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p class="footer-name">Jesús Alexander Casas Solís</p>
+            <p class="footer-name">Luis Angel Espericueta Medina</p>
             <p class="footer-contact">
-                <a href="mailto:jesusalexandercasas@gmail.com">jesusalexandercasas@gmail.com</a>
+                <a href="mailto:pespericueta132@gmail.com">pespericueta132@gmail.com</a>
             </p>
         </div>
     </footer>
@@ -372,39 +372,7 @@
         ↑
     </button>
 
-    <script>
-        // Mostrar/ocultar botón de scroll
-        window.addEventListener('scroll', () => {
-            const scrollBtn = document.getElementById('scrollTopBtn');
-            if (window.pageYOffset > 300) {
-                scrollBtn.classList.add('show');
-            } else {
-                scrollBtn.classList.remove('show');
-            }
-        });
-
-        // Función para volver arriba
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Smooth scroll para enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="JS.js"></script>
 </body>
 
 </html>

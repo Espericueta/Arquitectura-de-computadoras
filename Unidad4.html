@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 4 - Computación Paralela</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="unidades.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Arquitectura de Computadoras</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="Unidad1.html" class="nav-link">Unidad 1</a>
+                <a href="Unidad2.html" class="nav-link">Unidad 2</a>
+                <a href="Unidad3.html" class="nav-link">Unidad 3</a>
+                <a href="Unidad4.html" class="nav-link active">Unidad 4</a>
+                <a href="Practicas.html" class="nav-link">Prácticas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="content-wrapper fade-in">
+        <h1>Unidad 4: Aspectos Básicos de la Computación Paralela</h1>
+
+        <!-- Sección 4.1 -->
+        <section id="4.1" class="content-section slide-in-left">
+            <h2>4.1 Aspectos Básicos de la Computación Paralela</h2>
+            <p>
+                La computación paralela se basa en la idea de dividir un problema en tareas más pequeñas y procesarlas 
+                de manera simultánea utilizando múltiples recursos de computación. Esto permite un procesamiento más 
+                rápido y eficiente en comparación con los enfoques secuenciales tradicionales.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Fundamentos principales:</strong>
+                <ul>
+                    <li><strong>División de tareas:</strong> Descomposición del problema en subproblemas</li>
+                    <li><strong>Procesamiento simultáneo:</strong> Ejecución paralela de múltiples tareas</li>
+                    <li><strong>Sincronización:</strong> Coordinación entre tareas paralelas</li>
+                    <li><strong>Comunicación:</strong> Intercambio de datos entre procesos</li>
+                    <li><strong>Gestión de recursos:</strong> Asignación eficiente de recursos computacionales</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>Ventajas de la computación paralela:</strong>
+                <p>Permite resolver problemas complejos que requerirían demasiado tiempo en sistemas secuenciales, 
+                mejora el rendimiento general del sistema y optimiza el uso de recursos computacionales disponibles.</p>
+            </div>
+
+            <img src="Images/paralela.jpg" alt="Computación Paralela">
+        </section>
+
+        <!-- Sección 4.2 -->
+        <section id="4.2" class="content-section">
+            <h2>4.2 Tipos de Computación Paralela</h2>
+            <p>
+                Existen varios tipos de computación paralela que se utilizan en diferentes contextos y escenarios. 
+                Estos enfoques se diferencian en cómo se dividen y procesan las tareas y los datos.
+            </p>
+
+            <h3>Principales enfoques de paralelismo:</h3>
+
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>Paralelismo a Nivel de Bit</h4>
+                <p>Se basa en procesar múltiples bits simultáneamente. Ejemplo: procesadores de 32 bits vs 64 bits.</p>
+            </div>
+
+            <div class="content-section" style="background: #e9ecef;">
+                <h4>Paralelismo a Nivel de Instrucción</h4>
+                <p>Múltiples instrucciones se ejecutan simultáneamente mediante técnicas como pipelining y ejecución 
+                fuera de orden.</p>
+            </div>
+
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>Paralelismo a Nivel de Datos</h4>
+                <p>La misma operación se aplica a múltiples datos simultáneamente. Común en operaciones matriciales 
+                y procesamiento de imágenes.</p>
+            </div>
+
+            <div class="content-section" style="background: #e9ecef;">
+                <h4>Paralelismo a Nivel de Tarea</h4>
+                <p>Diferentes tareas independientes se ejecutan en paralelo en diferentes procesadores o núcleos.</p>
+            </div>
+
+            <img src="Images/tipo paralelo.jpg" alt="Tipos de Computación Paralela">
+        </section>
+
+        <!-- Sección 4.2.1 -->
+        <section id="4.2.1" class="content-section">
+            <h2>4.2.1 Clasificación</h2>
+            <p>
+                La clasificación de la computación paralela puede realizarse en función de la forma en que se dividen
+                las tareas y los datos, así como de la forma en que se coordinan y comunican los procesos paralelos.
+            </p>
+
+            <h3>Taxonomía de Flynn</h3>
+            <p>
+                La clasificación más conocida es la Taxonomía de Flynn, que clasifica las arquitecturas de computadoras
+                según el número de flujos de instrucciones y datos:
+            </p>
+
+            <div class="highlight-box">
+                <h4>SISD (Single Instruction, Single Data)</h4>
+                <p>Una única instrucción opera sobre un único dato. Arquitectura tradicional secuencial.</p>
+                <ul>
+                    <li>Computadoras monoprocesador tradicionales</li>
+                    <li>Ejecución secuencial de instrucciones</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>SIMD (Single Instruction, Multiple Data)</h4>
+                <p>Una única instrucción opera sobre múltiples datos simultáneamente.</p>
+                <ul>
+                    <li>Procesadores vectoriales</li>
+                    <li>Unidades de procesamiento gráfico (GPU)</li>
+                    <li>Extensiones multimedia (MMX, SSE, AVX)</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>MISD (Multiple Instruction, Single Data)</h4>
+                <p>Múltiples instrucciones operan sobre un único dato.</p>
+                <ul>
+                    <li>Raramente implementado</li>
+                    <li>Algunas aplicaciones de tolerancia a fallos</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <h4>MIMD (Multiple Instruction, Multiple Data)</h4>
+                <p>Múltiples instrucciones operan sobre múltiples datos independientemente.</p>
+                <ul>
+                    <li>Sistemas multiprocesador (SMP)</li>
+                    <li>Clusters de computadoras</li>
+                    <li>Sistemas distribuidos</li>
+                    <li>Arquitecturas multi-core modernas</li>
+                </ul>
+            </div>
+
+            <img src="Images/clasificacion.jpg" alt="Clasificación de Sistemas Paralelos">
+        </section>
+
+        <!-- Sección 4.2.2 -->
+        <section id="4.2.2" class="content-section">
+            <h2>4.2.2 Arquitectura de Computadores Secuenciales</h2>
+            <p>
+                La arquitectura de computadores secuencial se refiere a los sistemas informáticos tradicionales en los
+                que las instrucciones se ejecutan una tras otra en secuencia. Este tipo de arquitectura sigue siendo
+                común en muchas computadoras personales y estaciones de trabajo.
+            </p>
+
+            <h3>Características principales:</h3>
+            <ul>
+                <li><strong>Ejecución secuencial:</strong> Las instrucciones se procesan en orden</li>
+                <li><strong>Un solo flujo de control:</strong> Un único contador de programa</li>
+                <li><strong>Memoria unificada:</strong> Una única memoria principal</li>
+                <li><strong>Procesador único:</strong> Un solo procesador ejecuta las instrucciones</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>Limitaciones:</strong>
+                <p>Las arquitecturas puramente secuenciales tienen limitaciones en cuanto a velocidad de procesamiento
+                para aplicaciones complejas. Por esto, incluso los procesadores modernos implementan técnicas de 
+                paralelismo interno como pipelining, ejecución superescalar y predicción de saltos.</p>
+            </div>
+
+            <h3>Evolución hacia el paralelismo:</h3>
+            <p>
+                Con el tiempo, las arquitecturas secuenciales han evolucionado para incorporar elementos de paralelismo:
+            </p>
+            <ul>
+                <li>Pipeline de instrucciones</li>
+                <li>Ejecución superescalar</li>
+                <li>Múltiples núcleos en un mismo chip</li>
+                <li>Hyperthreading / SMT</li>
+            </ul>
+
+            <img src="Images/secuenciales.jpg" alt="Arquitectura Secuencial">
+        </section>
+
+        <!-- Sección 4.2.3 -->
+        <section id="4.2.3" class="content-section">
+            <h2>4.2.3 Organización de Direcciones de Memoria</h2>
+            <p>
+                La organización de direcciones de memoria se refiere a cómo se asignan y acceden a las direcciones de
+                memoria en un sistema de computación paralela. Esto incluye consideraciones como la memoria compartida,
+                la memoria distribuida y las técnicas de direccionamiento utilizadas para acceder a los datos en paralelo.
+            </p>
+
+            <h3>Modelos de organización de memoria:</h3>
+
+            <div class="highlight-box">
+                <h4>1. Memoria Compartida</h4>
+                <p>Todos los procesadores tienen acceso a un espacio de direcciones común:</p>
+                <ul>
+                    <li>UMA (Uniform Memory Access): Tiempo de acceso uniforme</li>
+                    <li>NUMA (Non-Uniform Memory Access): Tiempo de acceso variable</li>
+                </ul>
+                <p><strong>Ventajas:</strong> Comunicación rápida, programación más simple</p>
+                <p><strong>Desventajas:</strong> Problemas de escalabilidad, sincronización compleja</p>
+            </div>
+
+            <div class="info-box">
+                <h4>2. Memoria Distribuida</h4>
+                <p>Cada procesador tiene su propia memoria local:</p>
+                <ul>
+                    <li>Comunicación mediante paso de mensajes</li>
+                    <li>Espacio de direcciones privado para cada procesador</li>
+                </ul>
+                <p><strong>Ventajas:</strong> Escalabilidad, sin conflictos de memoria</p>
+                <p><strong>Desventajas:</strong> Comunicación más lenta, programación compleja</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>3. Memoria Híbrida</h4>
+                <p>Combina aspectos de memoria compartida y distribuida:</p>
+                <ul>
+                    <li>Nodos con memoria compartida local</li>
+                    <li>Comunicación entre nodos mediante paso de mensajes</li>
+                </ul>
+                <p>Común en clusters de sistemas SMP modernos</p>
+            </div>
+
+            <img src="Images/Direccion.jpg" alt="Organización de Memoria">
+        </section>
+
+        <!-- Sección 4.3 -->
+        <section id="4.3" class="content-section">
+            <h2>4.3 Sistema de Memoria Compartida</h2>
+            <p>
+                Los sistemas de memoria compartida son un enfoque de computación paralela en el que múltiples
+                procesadores acceden a una misma área de memoria compartida. Esto permite a los procesadores compartir
+                datos y comunicarse de manera eficiente.
+            </p>
+
+            <h3>Características principales:</h3>
+            <ul>
+                <li>Espacio de direcciones único y compartido</li>
+                <li>Comunicación implícita mediante variables compartidas</li>
+                <li>Necesidad de mecanismos de sincronización</li>
+                <li>Coherencia de caché crítica</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Ventajas:</strong>
+                <ul>
+                    <li>Comunicación rápida entre procesadores</li>
+                    <li>Modelo de programación más intuitivo</li>
+                    <li>Compartición eficiente de datos</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>Desafíos:</strong>
+                <ul>
+                    <li>Problemas de escalabilidad con muchos procesadores</li>
+                    <li>Complejidad en la sincronización</li>
+                    <li>Condiciones de carrera (race conditions)</li>
+                    <li>Coherencia de caché</li>
+                </ul>
+            </div>
+
+            <img src="Images/Compartida.jpg" alt="Sistema de Memoria Compartida">
+        </section>
+
+        <!-- Sección 4.3.1.1 -->
+        <section id="4.3.1.1" class="content-section">
+            <h2>4.3.1.1 Redes de Media Compartida</h2>
+            <p>
+                Las redes de medio compartida son un tipo de arquitectura de memoria compartida en la que los
+                procesadores se conectan físicamente a un bus compartido o a una red de interconexión. Los procesadores
+                pueden leer y escribir en la memoria compartida a través de este medio compartido.
+            </p>
+
+            <h3>Características:</h3>
+            <div class="info-box">
+                <ul>
+                    <li><strong>Bus compartido:</strong> Todos los procesadores conectados al mismo bus</li>
+                    <li><strong>Arbitraje:</strong> Necesidad de un mecanismo para resolver conflictos</li>
+                    <li><strong>Ancho de banda limitado:</strong> Compartido entre todos los procesadores</li>
+                    <li><strong>Escalabilidad limitada:</strong> Típicamente hasta 16-32 procesadores</li>
+                </ul>
+            </div>
+
+            <h3>Ejemplos:</h3>
+            <ul>
+                <li>Sistemas SMP tradicionales con bus frontal</li>
+                <li>Arquitecturas de bus múltiple</li>
+                <li>Sistemas con crossbar switches simples</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>Limitación principal:</strong>
+                <p>El ancho de banda del bus compartido se convierte en un cuello de botella cuando aumenta el número
+                de procesadores, limitando la escalabilidad del sistema.</p>
+            </div>
+
+            <img src="Images/red.jpg" alt="Redes de Media Compartida">
+        </section>
+
+        <!-- Sección 4.3.1.2 -->
+        <section id="4.3.1.2" class="content-section">
+            <h2>4.3.1.2 Redes Conmutadas</h2>
+            <p>
+                Las redes conmutadas utilizan interruptores o conmutadores para establecer conexiones entre los 
+                procesadores y la memoria compartida. Estas redes ofrecen una mayor escalabilidad y capacidad de 
+                comunicación en comparación con las redes de medio compartida.
+            </p>
+
+            <h3>Tipos de redes conmutadas:</h3>
+
+            <div class="highlight-box">
+                <h4>Crossbar Switch</h4>
+                <p>Matriz de conmutación que permite conexiones punto a punto entre cualquier procesador y módulo 
+                de memoria.</p>
+                <ul>
+                    <li><strong>Ventajas:</strong> Sin congestión, múltiples transferencias simultáneas</li>
+                    <li><strong>Desventajas:</strong> Costo O(n²), complejidad alta</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>Redes Multietapa</h4>
+                <p>Múltiples etapas de conmutadores conectados jerárquicamente.</p>
+                <ul>
+                    <li>Red Omega</li>
+                    <li>Red Butterfly</li>
+                    <li>Red Benes</li>
+                </ul>
+                <p>Mejor escalabilidad que crossbar con costo O(n log n)</p>
+            </div>
+
+            <div class="success-box">
+                <h4>Ventajas de las redes conmutadas:</h4>
+                <ul>
+                    <li>Mayor escalabilidad que buses compartidos</li>
+                    <li>Múltiples comunicaciones simultáneas</li>
+                    <li>Mejor ancho de banda agregado</li>
+                    <li>Menor latencia en sistemas grandes</li>
+                </ul>
+            </div>
+
+            <img src="Images/Conmutada.jpg" alt="Redes Conmutadas">
+        </section>
+
+        <!-- Sección 4.4 -->
+        <section id="4.4" class="content-section">
+            <h2>4.4 Sistemas de Memoria Distribuida</h2>
+            <p>
+                Los sistemas de memoria distribuida son una forma de organización de la memoria en la computación
+                paralela en la que cada procesador tiene su propia memoria local. Esto permite una mayor independencia
+                entre los procesadores y reduce la necesidad de acceder a una memoria compartida.
+            </p>
+
+            <h3>Características principales:</h3>
+            <ul>
+                <li>Cada procesador tiene su espacio de direcciones privado</li>
+                <li>Comunicación mediante paso de mensajes explícito</li>
+                <li>Escalabilidad superior a sistemas de memoria compartida</li>
+                <li>Sin problemas de coherencia de caché global</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Modelos de programación:</strong>
+                <ul>
+                    <li><strong>MPI (Message Passing Interface):</strong> Estándar más usado</li>
+                    <li><strong>PVM (Parallel Virtual Machine):</strong> Sistema más antiguo</li>
+                    <li><strong>Sockets:</strong> Comunicación de bajo nivel</li>
+                </ul>
+            </div>
+
+            <h3>Ventajas:</h3>
+            <div class="success-box">
+                <ul>
+                    <li>Excelente escalabilidad (miles de nodos)</li>
+                    <li>Sin contención de memoria centralizada</li>
+                    <li>Costo efectivo con hardware commodity</li>
+                    <li>Tolerancia a fallos más simple</li>
+                </ul>
+            </div>
+
+            <h3>Desventajas:</h3>
+            <div class="warning-box">
+                <ul>
+                    <li>Programación más compleja</li>
+                    <li>Mayor latencia en la comunicación</li>
+                    <li>Necesidad de distribuir datos explícitamente</li>
+                    <li>Balance de carga más difícil</li>
+                </ul>
+            </div>
+
+            <h3>Aplicaciones típicas:</h3>
+            <ul>
+                <li>Clusters de computadoras</li>
+                <li>Supercomputadoras modernas</li>
+                <li>Cloud computing</li>
+                <li>Grid computing</li>
+            </ul>
+        </section>
+
+        <!-- Sección 4.5 -->
+        <section id="4.5" class="content-section">
+            <h2>4.5 Casos de Estudio</h2>
+            <p>
+                En el campo de la computación paralela, existen numerosos casos de estudio que han demostrado la
+                eficacia y los beneficios de los enfoques paralelos en diferentes dominios.
+            </p>
+
+            <h3>Aplicaciones científicas:</h3>
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>Simulaciones Científicas</h4>
+                <ul>
+                    <li>Modelado climático y meteorológico</li>
+                    <li>Simulaciones de dinámica molecular</li>
+                    <li>Modelado de explosiones nucleares</li>
+                    <li>Simulaciones de física de partículas</li>
+                </ul>
+            </div>
+
+            <h3>Procesamiento de datos:</h3>
+            <div class="content-section" style="background: #e9ecef;">
+                <h4>Big Data y Analytics</h4>
+                <ul>
+                    <li>Análisis de grandes conjuntos de datos</li>
+                    <li>Machine Learning y Deep Learning</li>
+                    <li>Procesamiento de imágenes médicas</li>
+                    <li>Bioinformática y genómica</li>
+                </ul>
+            </div>
+
+            <h3>Aplicaciones industriales:</h3>
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>Renderizado y Gráficos</h4>
+                <ul>
+                    <li>Renderizado de películas animadas</li>
+                    <li>Simulación de efectos visuales</li>
+                    <li>Videojuegos de alto rendimiento</li>
+                    <li>Realidad virtual y aumentada</li>
+                </ul>
+            </div>
+
+            <h3>Infraestructura moderna:</h3>
+            <div class="content-section" style="background: #e9ecef;">
+                <h4>Servicios en la Nube</h4>
+                <ul>
+                    <li>Procesamiento distribuido (MapReduce, Spark)</li>
+                    <li>Bases de datos distribuidas</li>
+                    <li>Sistemas de almacenamiento paralelo</li>
+                    <li>Servicios web escalables</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Lecciones aprendidas:</strong>
+                <ul>
+                    <li>La elección de arquitectura depende del problema específico</li>
+                    <li>El balance entre comunicación y computación es crítico</li>
+                    <li>La escalabilidad requiere diseño cuidadoso</li>
+                    <li>Los sistemas híbridos son cada vez más comunes</li>
+                </ul>
+            </div>
+
+            <img src="Images/estudio.jpg" alt="Casos de Estudio">
+        </section>
+
+        <!-- Navegación entre unidades -->
+        <div class="internal-nav">
+            <a href="Unidad3.html" class="nav-button">← Unidad 3</a>
+            <a href="index.html" class="nav-button">Inicio</a>
+            <a href="Practicas.html" class="nav-button">Prácticas →</a>
+        </div>
+
+        <!-- Botón para volver al inicio -->
+        <div style="text-align: center;">
+            <a href="index.html" class="btn-home">Página Principal</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-name">Jesús Alexander Casas Solís</p>
+            <p class="footer-contact">
+                <a href="mailto:jesusalexandercasas@gmail.com">jesusalexandercasas@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botón volver arriba -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" class="scroll-top-btn" title="Volver arriba">
+        ↑
+    </button>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

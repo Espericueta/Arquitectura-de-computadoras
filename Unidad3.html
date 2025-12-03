@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3 - Selección de Componentes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="unidades.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Arquitectura de Computadoras</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="Unidad1.html" class="nav-link">Unidad 1</a>
+                <a href="Unidad2.html" class="nav-link">Unidad 2</a>
+                <a href="Unidad3.html" class="nav-link active">Unidad 3</a>
+                <a href="Unidad4.html" class="nav-link">Unidad 4</a>
+                <a href="Practicas.html" class="nav-link">Prácticas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="content-wrapper fade-in">
+        <h1>Unidad 3: Selección de Componentes para el Montaje de una PC</h1>
+        <!-- Sección 3.1 -->
+        <section id="3.1" class="content-section slide-in-left">
+            <h2>3.1 Chipset</h2>
+            <p>
+                Un chipset es el conjunto de circuitos integrados diseñados con base en la arquitectura de un procesador,
+                permitiendo que ese tipo de procesadores funcionen en una placa base. Sirven de puente de comunicación 
+                con el resto de componentes de la placa, como son la memoria, las tarjetas de expansión, los puertos 
+                USB, ratón, teclado, etc.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Componentes principales:</strong>
+                <p>Las placas base modernas suelen incluir dos integrados principales:</p>
+                <ul>
+                    <li><strong>Puente Norte:</strong> Gestiona comunicación con CPU, RAM y tarjeta gráfica</li>
+                    <li><strong>Puente Sur:</strong> Maneja dispositivos de E/S y almacenamiento</li>
+                </ul>
+                <p><em>Nota: Las últimas placas base carecen de puente norte, ya que los procesadores de última 
+                generación lo llevan integrado.</em></p>
+            </div>
+
+            <h3>Funcionamiento</h3>
+            <p>
+                El chipset es el que hace posible que la placa base funcione como eje del sistema, dando soporte a 
+                varios componentes e interconectándolos de forma que se comuniquen entre ellos haciendo uso de diversos 
+                buses.
+            </p>
+            <p>
+                Es uno de los pocos elementos que tiene conexión directa con el procesador, gestiona la mayor parte de 
+                la información que entra y sale por el bus principal del procesador, del sistema de vídeo y muchas veces 
+                de la memoria RAM.
+            </p>
+            <img src="Images/Chipset.jpg" alt="Chipset">
+        </section>
+
+        <!-- Sección 3.1.1 -->
+        <section id="3.1.1" class="content-section">
+            <h2>3.1.1 Unidad de Procesamiento</h2>
+            <p>
+                La unidad central de procesamiento (CPU - Central Processing Unit) es el hardware dentro de una
+                computadora u otros dispositivos programables. Su trabajo es interpretar las instrucciones de un 
+                programa informático mediante la realización de las operaciones básicas aritméticas, lógicas y externas.
+            </p>
+
+            <h3>Componentes de la CPU:</h3>
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>Unidad Aritmético Lógica (ALU)</h4>
+                <p>Realiza operaciones aritméticas y lógicas.</p>
+            </div>
+
+            <div class="content-section" style="background: #e9ecef;">
+                <h4>Unidad de Control (CU)</h4>
+                <p>Dirige el tráfico de información entre los registros de la CPU y conecta con la ALU las 
+                instrucciones extraídas de la memoria.</p>
+            </div>
+
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>Registros Internos</h4>
+                <p>No accesibles (de instrucción, de bus de datos y bus de dirección) y accesibles de uso específico 
+                (contador programa, puntero pila, acumulador, flags, etc.) o de uso general.</p>
+            </div>
+            <img src="Images/ucp.jpg" alt="Unidad Central de Procesamiento">
+        </section>
+
+        <!-- Sección 3.1.2 -->
+        <section id="3.1.2" class="content-section">
+            <h2>3.1.2 Controlador del Bus</h2>
+            <p>
+                El controlador del bus se encarga de la frecuencia de funcionamiento y las señales de sincronismo,
+                temporización y control. Está ubicado en un chip en la placa base.
+            </p>
+            <p>
+                El bus es la vía a través de la que se van a transmitir y recibir todas las comunicaciones, tanto 
+                internas como externas, del sistema informático. El bus es solamente un dispositivo de transferencia 
+                de información entre los componentes conectados a él, no almacena información alguna en ningún momento.
+            </p>
+            <div class="info-box">
+                <strong>Funcionamiento:</strong>
+                <p>Los datos, en forma de señal eléctrica, sólo permanecen en el bus el tiempo que necesitan en 
+                recorrer la distancia entre los dos componentes implicados en la transferencia.</p>
+            </div>
+            <img src="Images/Controladordebus.jpg" alt="Controlador del Bus">
+        </section>
+
+        <!-- Sección 3.1.3 -->
+        <section id="3.1.3" class="content-section">
+            <h2>3.1.3 Puerta de Entrada/Salida</h2>
+            <p>
+                Un puerto de E/S es un enchufe en una computadora al que se conecta un cable. El puerto conecta la 
+                CPU a un dispositivo periférico a través de una interfaz de hardware o a la red a través de una 
+                interfaz de red.
+            </p>
+
+            <h3>Tipos de puertos:</h3>
+
+            <div class="highlight-box">
+                <h4>Puerto Interno</h4>
+                <p>Conecta la placa base a dispositivos internos como unidad de disco duro, unidad de CD, módem 
+                interno, etc.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Puerto Externo</h4>
+                <p>Conecta la placa base a dispositivos externos como módem, mouse, impresora, unidades flash, etc.</p>
+            </div>
+
+            <h3>Principales tipos de puertos:</h3>
+            <ul>
+                <li><strong>Puerto Serial:</strong> Transmite datos secuencialmente bit a bit (RS232, COM)</li>
+                <li><strong>Puerto USB:</strong> Universal Serial Bus, estándar para conexión de datos digitales</li>
+                <li><strong>Puerto PS/2:</strong> Para conectar mouse y teclado (casi obsoleto)</li>
+                <li><strong>Puerto de Infrarrojos:</strong> Intercambio inalámbrico de datos hasta 10m</li>
+                <li><strong>Puerto Bluetooth:</strong> Conexión inalámbrica de corto alcance</li>
+                <li><strong>Puerto FireWire:</strong> IEEE 1394, para dispositivos de audio y video</li>
+            </ul>
+            <img src="Images/puertos.jpg" alt="Puertos de Entrada/Salida">
+        </section>
+
+        <!-- Sección 3.1.4 -->
+        <section id="3.1.4" class="content-section">
+            <h2>3.1.4 Controlador de Interrupciones</h2>
+            <p>
+                El controlador de interrupciones es un módulo que tiene por función gestionar las interrupciones de
+                entrada/salida para el procesador. Esto ahorra diseñar lógica y añadir patitas al procesador. También
+                proporciona flexibilidad porque permite, idealmente, gestionar un número ilimitado de señales de 
+                interrupción.
+            </p>
+
+            <h3>Ciclo de reconocimiento de interrupción:</h3>
+            <ol>
+                <li>Tras la activación de una línea IR, el controlador activa la salida INTR señalándole a la CPU 
+                la existencia de una interrupción activada</li>
+                <li>Al recibir la señal, el procesador da un pulso en su salida INTA indicando que comienza un 
+                ciclo de reconocimiento</li>
+                <li>El controlador comienza a arbitrar las interrupciones recibidas y selecciona la más prioritaria</li>
+                <li>Se emite un segundo pulso por la línea INTA que utiliza el controlador para depositar en el bus 
+                el vector correspondiente</li>
+                <li>El procesador obtiene la dirección de la rutina de interrupción y salta a ella</li>
+            </ol>
+            <img src="Images/cinterrupciones.jpg" alt="Controlador de Interrupciones">
+        </section>
+
+        <!-- Sección 3.1.5 -->
+        <section id="3.1.5" class="content-section">
+            <h2>3.1.5 Controlador de Acceso Directo a Memoria</h2>
+            <p>
+                El mecanismo de acceso directo a memoria está controlado por un chip especial, el DMAC ("DMA Controller"),
+                que permite realizar estos intercambios sin apenas intervención del procesador.
+            </p>
+
+            <div class="info-box">
+                <strong>Evolución histórica:</strong>
+                <ul>
+                    <li><strong>XT:</strong> Integrado 8237A que proporcionaba 4 canales de 8 bits</li>
+                    <li><strong>AT:</strong> Dos controladores, el segundo en "Cascada" de la línea 4 del primero</li>
+                    <li><strong>Canales de 16 bits:</strong> Pueden mover 2 Bytes de posiciones contiguas cada vez</li>
+                </ul>
+            </div>
+            <img src="Images/cadm.jpg" alt="Controlador de Acceso Directo a Memoria">
+
+            <h3>Características:</h3>
+            <p>
+                Cada canal tiene asignada una prioridad para el caso de recibirse simultáneamente varias peticiones 
+                (los números más bajos tienen prioridad más alta). Pueden ser utilizados por cualquier dispositivo 
+                que los necesite (suponiendo que esté diseñado para soportar este modo de operación).
+            </p>
+            <img src="Images/cadm.jpg" alt="Controlador de Acceso Directo a Memoria">
+        </section>
+
+        <!-- Sección 3.1.6 -->
+        <section id="3.1.6" class="content-section">
+            <h2>3.1.6 Circuitos de Temporización</h2>
+            <p>
+                El circuito electrónico que más se utiliza tanto en la industria como en circuitería comercial es el
+                circuito temporizador o de retardo. Un temporizador básicamente consiste en un elemento que se activa 
+                o desactiva después de un tiempo preestablecido.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Funcionalidad:</strong>
+                <p>De esta manera podemos determinar el parámetro relacionado con el tiempo que ha de transcurrir para 
+                que el circuito susceptible de temporizarse, se detenga o empiece a funcionar o simplemente cierre un 
+                contacto o lo abra.</p>
+            </div>
+
+            <h3>Aplicaciones en PC:</h3>
+            <p>
+                Se encuentra en la placa base de la PC y es capaz de mantener una cuenta de tiempo basada en el reloj 
+                de la computadora. Puede usarse para calcular el intervalo entre dos mediciones de tiempo o para 
+                generar pausas. Es útil para medir el tiempo que dura cierto proceso o para mantener actualizadas la 
+                hora del día y la fecha si se deja la PC conectada y encendida.
+            </p>
+            <img src="Images/temporizacion.jpg" alt="Circuitos de Temporización">
+        </section>
+
+        <!-- Sección 3.1.7 -->
+        <section id="3.1.7" class="content-section">
+            <h2>3.1.7 Circuitos de Control</h2>
+            <p>
+                Es una red secuencial que acepta un código que define la operación que se va a ejecutar y luego 
+                prosigue a través de una secuencia de estados, generando una correspondiente secuencia de señales 
+                control.
+            </p>
+
+            <h3>Señales generadas:</h3>
+            <ul>
+                <li>Señales de control de lectura-escritura en el bus de control del sistema</li>
+                <li>Señales de dirección de memoria válida</li>
+                <li>Señales conectadas a la ALU</li>
+                <li>Señales a los registros internos del procesador</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>Función principal:</strong>
+                <p>Regular el flujo de información en el procesador y desde los buses de dirección y de datos del 
+                sistema.</p>
+            </div>
+            <img src="Images/contol.jpg" alt="Circuitos de Control">
+        </section>
+
+        <!-- Sección 3.1.8 -->
+        <section id="3.1.8" class="content-section">
+            <h2>3.1.8 Controladores de Video</h2>
+            <p>
+                La tarjeta de video (también llamada controlador de video) es un componente electrónico requerido para
+                generar una señal de video que se manda a una pantalla de video por medio de un cable.
+            </p>
+
+            <h3>Componentes de una tarjeta gráfica:</h3>
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>Controlador de Video</h4>
+                <p>Lee a intervalos la información almacenada en la RAM video y la transfiere al monitor en forma de 
+                señal de video.</p>
+            </div>
+
+            <div class="content-section" style="background: #e9ecef;">
+                <h4>Memoria de Pantalla o RAM Video</h4>
+                <p>Almacena la información que se mostrará en pantalla.</p>
+            </div>
+
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>Generador de Caracteres</h4>
+                <p>Genera los caracteres y símbolos a mostrar.</p>
+            </div>
+            <img src="Images/video.jpg" alt="Controladores de Video">
+
+            <div class="content-section" style="background: #e9ecef;">
+                <h4>Acelerador de Gráficos</h4>
+                <p>Procesa operaciones gráficas complejas de forma eficiente.</p>
+            </div>
+            <img src="Images/video.jpg" alt="Controladores de Video">
+        </section>
+
+        <!-- Sección 3.2 -->
+        <section id="3.2" class="content-section">
+            <h2>3.2 Aplicaciones</h2>
+            <p>
+                En informática, un periférico de entrada/salida o E/S (input/output o I/O) es aquel tipo de
+                dispositivo periférico de un computador capaz de interactuar con los elementos externos a ese sistema 
+                de forma bidireccional.
+            </p>
+
+            <h3>Funciones:</h3>
+            <p>
+                Un periférico de E/S es el que se utiliza para ingresar datos a la computadora, y luego de ser 
+                procesados por la CPU, genera la salida de información. Su función es leer o grabar, permanente o 
+                virtualmente, todo aquello que se haga con la computadora.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Tipos de dispositivos E/S:</strong>
+                <ul>
+                    <li>Dispositivos de comunicación entre computadoras (módems, tarjetas de red)</li>
+                    <li>Dispositivos de almacenamiento (discos duros, SSD, memorias flash)</li>
+                    <li>Periféricos de entrada y salida combinados</li>
+                </ul>
+            </div>
+            <img src="Images/ES..jpg" alt="Entrada/Salida">
+        </section>
+
+        <!-- Sección 3.2.1 -->
+        <section id="3.2.1" class="content-section">
+            <h2>3.2.1 Entrada/Salida</h2>
+            <p>
+                El almacenamiento de datos tiene un proceso a través del uso de la tecnología. Ésta se aplica para
+                organizar, distribuir y archivar información con los bytes y los bits que son parte de los sistemas 
+                de los que la gente depende día con día.
+            </p>
+
+            <h3>Memoria vs Almacenamiento</h3>
+            <div class="warning-box">
+                <strong>Diferencia importante:</strong>
+                <p><strong>Memoria (RAM):</strong> Ubicación de datos a corto plazo, volátil</p>
+                <p><strong>Almacenamiento:</strong> Componente que permite almacenar y acceder a datos a largo plazo</p>
+            </div>
+
+            <h3>Dispositivos de almacenamiento:</h3>
+            <ul>
+                <li><strong>Unidades de discos duros (HDD):</strong> Almacenamiento magnético tradicional</li>
+                <li><strong>Discos de estado sólido (SSD):</strong> Almacenamiento sin partes móviles, más rápido</li>
+                <li><strong>Unidades híbridas:</strong> Combinación de HDD y SSD</li>
+                <li><strong>Almacenamiento en la nube:</strong> Datos almacenados en servidores remotos</li>
+            </ul>
+            <img src="Images/ESC.jpg" alt="Entrada/Salida de Datos">
+        </section>
+
+        <!-- Sección 3.2.2 -->
+        <section id="3.2.2" class="content-section">
+            <h2>3.2.2 Almacenamiento</h2>
+            <p>
+                Conforme la tecnología avanza, más datos se van generando, por lo que es necesario contar con un
+                almacenamiento eficiente para poder guardar toda esa información y acceder a ella.
+            </p>
+
+            <div class="info-box">
+                <strong>Importancia del almacenamiento:</strong>
+                <p>El almacenamiento de datos llega a ser tan importante en todos los servicios: desde una simple 
+                aplicación, contenido multimedia, direcciones, contactos, hasta protocolos de red y todo lo que tiene 
+                que ver con el mundo digital.</p>
+            </div>
+
+            <h3>Evolución del almacenamiento:</h3>
+            <p>
+                El almacenamiento de datos ha cambiado mucho, desde los sistemas de disco tradicionales, que muy 
+                probablemente se sigan utilizando, pero de una forma más digital: hoy se encuentran conectados a una 
+                red y son definidos por un software.
+            </p>
+            <img src="Images/Almacenamiento.jpeg" alt="Dispositivos de Almacenamiento">
+        </section>
+
+        <!-- Sección 3.2.3 -->
+        <section id="3.2.3" class="content-section">
+            <h2>3.2.3 Fuentes de Alimentación</h2>
+            <p>
+                Una fuente de alimentación es un componente esencial de cualquier dispositivo electrónico ya que es 
+                ella quien se encarga de darle vida. En cualquier equipo, por pequeño que sea, siempre hay una fuente 
+                de alimentación.
+            </p>
+
+            <h3>Función de la fuente de alimentación:</h3>
+            <p>
+                Siguiendo con el tema de los ordenadores de sobremesa, la fuente de alimentación da energía a la placa 
+                base, CPU, tarjetas gráficas, HDDs, SSDs, ventiladores, lectores de CDs. En resumen, alimenta a todo 
+                lo que necesite energía, para ello hace uso de diferentes tipos de cables.
+            </p>
+
+            <h3>Tipos de conectores:</h3>
+            <ul>
+                <li><strong>Conectores SATA:</strong> Para SSDs y HDDs</li>
+                <li><strong>Conector ATX 24 pines:</strong> Para la placa base</li>
+                <li><strong>Conectores PCIe:</strong> Para tarjetas gráficas</li>
+                <li><strong>Conectores Molex:</strong> Para ventiladores y dispositivos antiguos</li>
+                <li><strong>Conector CPU 4/8 pines:</strong> Alimentación del procesador</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Sistemas de protección:</strong>
+                <p>Las fuentes de alimentación modernas incluyen múltiples sistemas de protección: sobrevoltaje, 
+                cortocircuito, sobrecarga y sobretemperatura, protegiendo así todos los componentes del sistema.</p>
+            </div>
+
+            <div class="info-box">
+                <strong>Fuentes pasivas:</strong>
+                <p>Existen fuentes de alimentación que no requieren de ventilación, por lo que su refrigeración es 
+                completamente pasiva. Estos modelos suelen ser fuentes de medio-bajo voltaje con una alta eficiencia.</p>
+            </div>
+        </section>
+
+        <!-- Sección 3.3 -->
+        <section id="3.3" class="content-section">
+            <h2>3.3 Ambientes de Servicio</h2>
+            <p>
+                El negocio de proveer servicios de datos es mucho más complejo que la forma en la que se dan los
+                tradicionales servicios. Los primeros requieren de nuevos conocimientos y modelos de negocio, que con 
+                frecuencia se termina involucrando o necesitando la colaboración de terceras empresas.
+            </p>
+            <div class="warning-box">
+                <strong>Transformación necesaria:</strong>
+                <p>Se hace necesario que los operadores tradicionales transformen su negocio para ofrecer los 
+                servicios de datos con los niveles de servicio que el mercado exige.</p>
+            </div>
+            <img src="Images/Servicio.webp" alt="Ambientes de Servicio">
+        </section>
+
+        <!-- Sección 3.3.1 -->
+        <section id="3.3.1" class="content-section">
+            <h2>3.3.1 Negocios</h2>
+            <p>
+                Definitivamente, la tecnología en general ha sido la causa principal y la acción más directa para la
+                transformación del trabajo de las organizaciones en la posguerra del siglo XX. Tanto los bienes de 
+                capital "duros" como los programas y sistemas de información y comunicación en general, han incrementado 
+                enormemente la productividad y eficiencia de las organizaciones.
+            </p>
+
+            <h3>Ejemplos de aplicación:</h3>
+            <ul>
+                <li>Bases de datos en redes de todo orden y topología</li>
+                <li>Sistemas de reservaciones en aerolíneas</li>
+                <li>Sistemas de contabilidad y nóminas</li>
+                <li>Archivos clínicos en centros de salud</li>
+                <li>Sistemas de conmutación electrónica</li>
+                <li>Aplicaciones a procesos administrativos</li>
+            </ul>
+            <img src="Images/negocios.jpg" alt="Aplicaciones en Negocios">
+        </section>
+
+        <!-- Sección 3.3.2 -->
+        <section id="3.3.2" class="content-section">
+            <h2>3.3.2 Industria</h2>
+            <p>
+                La industrialización de los servicios de tecnología de información va a redefinir el mercado en 
+                términos de cómo las organizaciones evalúan, compran y seleccionan los servicios y cómo los vendedores 
+                desarrollan y establecen precios de los servicios.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Estandarización:</strong>
+                <p>Para lograr esta estandarización, se requiere un enfoque hacia las soluciones genéricas y esto debe 
+                ser responsabilidad de los proveedores, que deben desarrollar, operar y administrar el resultado de 
+                estos genéricos de TI.</p>
+            </div>
+
+            <h3>Madurez de la industria:</h3>
+            <p>
+                Aunque los servicios de TI están en proceso de madurez, la madurez de la industria se ha incrementado 
+                en aspectos evidentes, como la forma en que los servicios son implementados y administrados.
+            </p>
+            <img src="Images/industria.jpg" alt="Aplicaciones en Industria">
+        </section>
+
+        <!-- Sección 3.3.3 -->
+        <section id="3.3.3" class="content-section">
+            <h2>3.3.3 Comercio Electrónico</h2>
+            <p>
+                El desarrollo de las tecnologías y de las telecomunicaciones ha hecho que los intercambios de datos
+                crezcan a niveles extraordinarios, simplificándose cada vez más y creando nuevas formas de comercio. 
+                En este marco se desarrolla el Comercio Electrónico.
+            </p>
+
+            <div class="info-box">
+                <strong>Definición:</strong>
+                <p>Se considera "Comercio Electrónico" al conjunto de aquellas transacciones comerciales y financieras
+                realizadas a través del procesamiento y la transmisión de información, incluyendo texto, sonido e 
+                imagen.</p>
+            </div>
+
+            <h3>Ventajas del comercio electrónico:</h3>
+            <ul>
+                <li>Disponibilidad 24/7</li>
+                <li>Alcance global</li>
+                <li>Menores costos operativos</li>
+                <li>Personalización de la experiencia</li>
+                <li>Análisis de datos en tiempo real</li>
+                <li>Mayor conveniencia para los clientes</li>
+            </ul>
+            <img src="Images/comercio.jpeg" alt="Comercio Electrónico">
+        </section>
+
+        <!-- Navegación entre unidades -->
+        <div class="internal-nav">
+            <a href="Unidad2.html" class="nav-button">← Unidad 2</a>
+            <a href="index.html" class="nav-button">Inicio</a>
+            <a href="Unidad4.html" class="nav-button">Unidad 4 →</a>
+        </div>
+
+        <!-- Botón para volver al inicio -->
+        <div style="text-align: center;">
+            <a href="index.html" class="btn-home">Página Principal</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-name">Luis Angel Espericueta Medina</p>
+            <p class="footer-contact">
+                <a href="mailto:pespericueta132@gmail.com">pespericueta132@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botón volver arriba -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" class="scroll-top-btn" title="Volver arriba">
+        ↑
+    </button>
+
+    <script>
+        // Mostrar/ocultar botón de scroll
+        window.addEventListener('scroll', () => {
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+
+        // Función para volver arriba
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

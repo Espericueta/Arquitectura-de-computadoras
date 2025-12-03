@@ -1,0 +1,335 @@
+/* ========================================
+   ESTILOS COMUNES PARA PÁGINAS DE UNIDADES
+   ======================================== */
+
+/* Importar estilos base */
+@import url('styles.css');
+
+body {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+/* ========================================
+   CONTENT WRAPPER
+   ======================================== */
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   TÍTULOS
+   ======================================== */
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    padding-left: 1rem;
+    border-left: 5px solid var(--secondary-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+/* ========================================
+   ÍNDICE DE CONTENIDOS
+   ======================================== */
+
+.table-of-contents {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.table-of-contents h2 {
+    color: white;
+    border: none;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    text-align: center;
+}
+
+.toc-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.toc-list li {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: var(--transition);
+}
+
+.toc-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.toc-list a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+}
+
+.toc-list a:hover {
+    color: var(--primary-color);
+}
+
+/* ========================================
+   CONTENIDO DE TEXTO
+   ======================================== */
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* ========================================
+   LISTAS
+   ======================================== */
+
+ul, ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+ul li::marker {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* ========================================
+   IMÁGENES
+   ======================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin: 2rem auto;
+    display: block;
+    transition: var(--transition);
+}
+
+img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.image-caption {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   DESTACADOS Y NOTAS
+   ======================================== */
+
+.highlight-box {
+    background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+    border-left: 5px solid var(--primary-color);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 5px;
+}
+
+.info-box {
+    background: #e3f2fd;
+    border-left: 5px solid #2196F3;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 5px;
+}
+
+.warning-box {
+    background: #fff3e0;
+    border-left: 5px solid #ff9800;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 5px;
+}
+
+/* ========================================
+   BOTONES
+   ======================================== */
+
+.btn-home {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    margin: 2rem 0;
+}
+
+.btn-home:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   NAVEGACIÓN INTERNA
+   ======================================== */
+
+.internal-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-button {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .toc-list {
+        grid-template-columns: 1fr;
+    }
+
+    .internal-nav {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        min-width: 100%;
+    }
+}
+
+/* ========================================
+   ANIMACIONES ADICIONALES
+   ======================================== */
+
+.fade-in {
+    animation: fadeIn 0.6s ease;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   IMPRESIÓN
+   ======================================== */
+
+@media print {
+    .navbar,
+    .footer,
+    .scroll-top-btn,
+    .btn-home {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .content-wrapper {
+        box-shadow: none;
+        max-width: 100%;
+    }
+}

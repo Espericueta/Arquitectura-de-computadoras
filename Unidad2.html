@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2 - Estructura y Funcionamiento del CPU</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="unidades.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Arquitectura de Computadoras</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="Unidad1.html" class="nav-link">Unidad 1</a>
+                <a href="Unidad2.html" class="nav-link active">Unidad 2</a>
+                <a href="Unidad3.html" class="nav-link">Unidad 3</a>
+                <a href="Unidad4.html" class="nav-link">Unidad 4</a>
+                <a href="Practicas.html" class="nav-link">Prácticas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="content-wrapper fade-in">
+        <h1>Unidad 2: Estructura y Funcionamiento del CPU</h1>
+
+        <!-- Sección 2.1 -->
+        <section id="2.1" class="content-section slide-in-left">
+            <h2>2.1 Organización del Procesador</h2>
+            <p>
+                La Unidad de Procesamiento (CPU) controla el funcionamiento del computador y lleva a cabo sus funciones
+                de procesamiento de datos. Frecuentemente se le llama procesador.
+            </p>
+            <p>
+                Un procesador incluye tanto registros visibles por el usuario como registros de control/estado.
+                Los registros visibles por el usuario pueden ser de uso general o tener una utilidad especial, mientras
+                que los registros de control y estado se usan para controlar el funcionamiento del procesador, un claro 
+                ejemplo es el contador de programa.
+            </p>
+            <div class="highlight-box">
+                <strong>Funciones principales del CPU:</strong>
+                <ul>
+                    <li>Realiza una gran variedad de cálculos</li>
+                    <li>Ejecuta comparaciones numéricas</li>
+                    <li>Efectúa transferencias de datos</li>
+                    <li>Responde a peticiones de programas en memoria</li>
+                </ul>
+            </div>
+            <img src="Images/estructuradelprocesador.jpg" alt="Estructura del Procesador">
+        </section>
+
+        <!-- Sección 2.2 -->
+        <section id="2.2" class="content-section">
+            <h2>2.2 Estructura de Registros</h2>
+            <p>
+                Los registros del CPU se emplean para controlar las instrucciones en ejecución, manejar direccionamiento 
+                de memoria y propiciar la capacidad aritmética. Los registros vienen de tres tipos: datos, direcciones 
+                e índice, que tienen lugar en casi todos los aspectos de la operación del CPU.
+            </p>
+            <div class="info-box">
+                <strong>Tamaño de registros:</strong>
+                <p>El tamaño de un registro depende del CPU; los más simples tienen registros que aceptan 8 o 16 bits 
+                de datos y los más complejos tienen registros de 32, 48 o 64 bits.</p>
+            </div>
+            <img src="Images/registros2.jpg" alt="Registros del CPU">
+        </section>
+
+        <!-- Sección 2.2.1 -->
+        <section id="2.2.1" class="content-section">
+            <h2>2.2.1 Registros Visibles para el Usuario</h2>
+            <p>
+                Un registro visible al usuario es aquél que puede ser referenciado por medio del lenguaje máquina que
+                ejecuta la CPU. Prácticamente todos los diseños contemporáneos de CPUs están provistos de varios 
+                registros visibles al usuario, en oposición a disponer de un único acumulador.
+            </p>
+            
+            <h3>Clasificación de registros visibles:</h3>
+            <ul>
+                <li><strong>Uso General:</strong> Pueden ser asignados por el programador a diversas funciones</li>
+                <li><strong>Datos:</strong> Usados únicamente para contener datos</li>
+                <li><strong>Direcciones:</strong> Dedicados a un modo de direccionamiento particular</li>
+                <li><strong>Códigos de Condición:</strong> Contienen bits fijados por el hardware como resultado de operaciones</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Consideraciones de diseño:</strong>
+                <p>La cantidad de registros generales o especializados es una cuestión de diseño. No hay solución 
+                óptima, pero la tendencia parece ir hacia el uso de registros especializados. Parece óptimo entre 
+                8 y 32 registros.</p>
+            </div>
+            <img src="Images/visibles.jpg" alt="Registros Visibles al Usuario">
+        </section>
+
+        <!-- Sección 2.2.2 -->
+        <section id="2.2.2" class="content-section">
+            <h2>2.2.2 Registros de Control y de Estados</h2>
+            
+            <h3>Registros de Control</h3>
+            <p>
+                Hay diversos registros de la CPU que se pueden emplear para controlar su funcionamiento. La mayoría de
+                éstos, en la mayor parte de las máquinas, no son visibles al usuario. Algunos de ellos pueden ser 
+                visibles a instrucciones de máquina ejecutadas en un modo de control o de sistema operativo.
+            </p>
+            
+            <div class="info-box">
+                <strong>Registros esenciales para la ejecución de instrucciones:</strong>
+                <ul>
+                    <li><strong>Contador de Programa:</strong> Contiene la dirección de la siguiente instrucción</li>
+                    <li><strong>Registro de Dirección:</strong> Se conecta directamente al bus de direcciones</li>
+                    <li><strong>Registro de Instrucción:</strong> Almacena la instrucción captada</li>
+                    <li><strong>Registro de Datos:</strong> Se conecta directamente al bus de datos</li>
+                </ul>
+            </div>
+
+            <h3>Registros de Estado</h3>
+            <p>
+                El registro de estado, también conocido como registro de bandera, palabra de estado del programa y
+                registro de código de condición, se define como un conjunto de bits de bandera dentro de un procesador.
+            </p>
+            <p>
+                Las banderas indican cosas como desbordamiento, igualdad, signo y otros indicadores de estado útiles
+                para la ejecución de instrucciones condicionales.
+            </p>
+            <img src="Images/control.jpg" alt="Registros de Control y Estado">
+        </section>
+
+        <!-- Sección 2.2.3 -->
+        <section id="2.2.3" class="content-section">
+            <h2>2.2.3 Ejemplos de Registros de CPU Reales</h2>
+            
+            <h3>Tipos de registros en CPUs modernas:</h3>
+            
+            <div class="highlight-box">
+                <h4>1. Registros de Propósito General (GPRs)</h4>
+                <p>Se utilizan para almacenar datos y realizar operaciones aritméticas y lógicas:</p>
+                <ul>
+                    <li><strong>x86:</strong> EAX, EBX, ECX, EDX</li>
+                    <li><strong>ARM:</strong> R0, R1, R2, R3</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>2. Registro de Puntero de Pila</h4>
+                <p>Almacena la dirección de memoria actual del tope de la pila:</p>
+                <ul>
+                    <li><strong>x86:</strong> ESP (Extended Stack Pointer)</li>
+                    <li><strong>ARM:</strong> SP (Stack Pointer)</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>3. Registro de Contador de Programa</h4>
+                <p>Almacena la dirección de la próxima instrucción a ejecutar:</p>
+                <ul>
+                    <li><strong>x86:</strong> EIP (Extended Instruction Pointer)</li>
+                    <li><strong>ARM:</strong> PC (Program Counter)</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <h4>4. Registro de Bandera/Estado</h4>
+                <p>Almacena información sobre el estado y los resultados de las operaciones:</p>
+                <ul>
+                    <li><strong>x86:</strong> EFLAGS (Extended Flags Register)</li>
+                    <li><strong>ARM:</strong> CPSR (Current Program Status Register)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 2.3 -->
+        <section id="2.3" class="content-section">
+            <h2>2.3 El Ciclo de Instrucción</h2>
+            
+            <h3>Ciclos de computadora</h3>
+            <p>
+                La búsqueda es el proceso de obtener instrucciones de un programa o un elemento de datos de la memoria.
+                El término decodificar se refiere al proceso de traducir las instrucciones a señales que la computadora
+                puede ejecutar. Ejecutar es el proceso de llevar a cabo los comandos. Almacenamiento en este contexto 
+                significa escribir el resultado a la memoria.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Pipelining:</strong>
+                <p>Hoy día la mayoría de las computadoras personales soportan un concepto llamado pipelining. Con 
+                pipelining los procesadores inician la búsqueda de una segunda instrucción antes de que se haya 
+                completado el ciclo de la computadora de la primera instrucción. Los procesadores que cuentan con 
+                pipelining habilitado son más rápidos en el procesamiento.</p>
+            </div>
+            <img src="Images/instruccion.jpg" alt="Ciclo de Instrucción">
+        </section>
+
+        <!-- Sección 2.3.1 -->
+        <section id="2.3.1" class="content-section">
+            <h2>2.3.1 Ciclo Fetch-Decode-Execute</h2>
+            <p>
+                El encargado de ejecutar un programa en una computadora u otro sistema computacional es el CPU, lo
+                realiza siguiendo el llamado ciclo Fetch Decode Execute, con este ciclo se ejecutan todas las tareas 
+                que una computadora puede realizar.
+            </p>
+
+            <h3>Etapas del ciclo:</h3>
+            <ol>
+                <li><strong>Traer la instrucción (Fetch):</strong> Se obtiene la instrucción desde memoria y se almacena en el registro del CPU</li>
+                <li><strong>Decodificar (Decode):</strong> Se identifica el modo de direccionamiento y la ubicación de los datos</li>
+                <li><strong>Carga de Parámetros:</strong> Se ejecuta la lectura, cargando todos los datos identificados</li>
+                <li><strong>Ejecutar (Execute):</strong> Se ejecuta la instrucción configurada</li>
+                <li><strong>Almacenar:</strong> Se almacena el resultado obtenido</li>
+                <li><strong>Actualizar PC:</strong> Se actualiza el registro Program Counter con la siguiente dirección</li>
+            </ol>
+
+            <div class="info-box">
+                <strong>Nota importante:</strong>
+                <p>El ciclo expuesto es muy básico. Los sistemas de hoy en día son multitareas, lo cual conlleva a 
+                una alteración en este ciclo, además de las diferentes técnicas para reducir el tiempo de ejecución 
+                con temas de concurrencia y paralelismo en los procesadores modernos.</p>
+            </div>
+            <img src="Images/fetch.jpg" alt="Ciclo Fetch-Decode-Execute">
+        </section>
+
+        <!-- Sección 2.3.2 -->
+        <section id="2.3.2" class="content-section">
+            <h2>2.3.2 Segmentación de Instrucciones</h2>
+            <p>
+                La segmentación (en inglés pipelining, literalmente 'tubería' o 'cañería') es un método por el cual 
+                se consigue aumentar el rendimiento de algunos sistemas electrónicos digitales. Se usa principalmente 
+                en los microprocesadores.
+            </p>
+
+            <h3>Funcionamiento del Pipeline</h3>
+            <p>
+                El símil con la programación existe en que los cálculos deben ser registrados o sincronizados con el
+                reloj cada cierto tiempo para que la ruta crítica (tramo con más carga o retardo computacional entre 
+                dos registros de reloj) se reduzca.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Ventaja principal:</strong>
+                <p>Una vez el canal (pipe) está lleno, después de una latencia inicial, los resultados de cada comando 
+                vienen uno tras otro cada flanco de reloj y sin latencia extra por estar encadenados dentro del mismo 
+                canal, maximizando la frecuencia de trabajo.</p>
+            </div>
+            <img src="Images/instrucciones.jpg" alt="Segmentación de Instrucciones">
+        </section>
+
+        <!-- Sección 2.3.3 -->
+        <section id="2.3.3" class="content-section">
+            <h2>2.3.3 Conjunto de Instrucciones, Características y Funciones</h2>
+            <p>
+                Un conjunto de instrucciones o repertorio de instrucciones, juego de instrucciones o ISA (del inglés
+                Instruction Set Architecture) es una especificación que detalla las instrucciones que una CPU de un 
+                ordenador puede entender y ejecutar.
+            </p>
+
+            <h3>Tipos de ISA:</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>CISC (Complex Instruction Set Computer):</strong> Conjunto complejo de instrucciones</li>
+                    <li><strong>RISC (Reduced Instruction Set Computer):</strong> Conjunto reducido de instrucciones</li>
+                    <li><strong>SISC (Specific Instruction Set Computer):</strong> Conjunto específico de instrucciones</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>Arquitectura del Conjunto de Instrucciones (ISA):</strong>
+                <p>Se emplea para distinguir este conjunto de características de la microarquitectura, que son los 
+                elementos y técnicas que se emplean para implementar el conjunto de instrucciones. Procesadores con 
+                diferentes diseños internos pueden compartir un conjunto de instrucciones; por ejemplo el Intel Pentium 
+                y AMD Athlon implementan versiones casi idénticas del conjunto de instrucciones x86.</p>
+            </div>
+        </section>
+
+        <!-- Sección 2.3.4 -->
+        <section id="2.3.4" class="content-section">
+            <h2>2.3.4 Modos de Direccionamiento</h2>
+            <p>
+                Los modos de direccionamiento son las diferentes maneras de especificar un operando dentro de una
+                instrucción en lenguaje ensamblador. Un modo de direccionamiento especifica la forma de calcular la
+                dirección de memoria efectiva de un operando.
+            </p>
+
+            <h3>Principales modos de direccionamiento:</h3>
+
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>1. Inmediato (Immediate)</h4>
+                <p>El valor del operando se especifica directamente en la instrucción.</p>
+                <p><strong>Ejemplo:</strong> ADD R1, #10 (suma el valor inmediato 10 al registro R1)</p>
+            </div>
+
+            <div class="content-section" style="background: #e9ecef;">
+                <h4>2. Directo (Direct)</h4>
+                <p>La dirección de memoria del operando se especifica directamente en la instrucción.</p>
+                <p><strong>Ejemplo:</strong> LOAD R2, [100] (carga el valor de la dirección 100 en R2)</p>
+            </div>
+
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>3. Indirecto (Indirect)</h4>
+                <p>La dirección de memoria del operando se obtiene indirectamente a través de un registro.</p>
+                <p><strong>Ejemplo:</strong> LOAD R3, [R2] (carga el valor de la dirección apuntada por R2)</p>
+            </div>
+
+            <div class="content-section" style="background: #e9ecef;">
+                <h4>4. Basado en Registro (Register-based)</h4>
+                <p>La dirección se calcula sumando un desplazamiento a un registro base.</p>
+                <p><strong>Ejemplo:</strong> LOAD R4, [R5+10]</p>
+            </div>
+
+            <div class="content-section" style="background: #f8f9fa;">
+                <h4>5. Indexado (Indexed)</h4>
+                <p>La dirección se calcula sumando un desplazamiento a un registro índice.</p>
+                <p><strong>Ejemplo:</strong> LOAD R6, [R7+R8]</p>
+            </div>
+
+            <div class="content-section" style="background: #e9ecef;">
+                <h4>6. Relativo (Relative)</h4>
+                <p>Usado en instrucciones de salto. La dirección se calcula sumando un desplazamiento relativo.</p>
+                <p><strong>Ejemplo:</strong> JUMP [PC+20]</p>
+            </div>
+
+            <img src="Images/direccionamiento.jpg" alt="Modos de Direccionamiento">
+        </section>
+
+        <!-- Sección 2.4 -->
+        <section id="2.4" class="content-section">
+            <h2>2.4 Casos de Estudio de CPU Reales</h2>
+            <p>
+                En informática, los modos de direccionamiento son las diferentes maneras de especificar un operando
+                dentro de una instrucción en lenguaje ensamblador. No existe una forma generalmente aceptada de 
+                nombrar a los distintos modos de direccionamiento.
+            </p>
+
+            <div class="warning-box">
+                <strong>Nota importante:</strong>
+                <p>Los distintos autores y fabricantes de equipos pueden dar nombres diferentes para el modo de hacer 
+                frente al mismo, o los mismos nombres, a los diferentes modos de direccionamiento. Además, un modo de 
+                direccionamiento que en una determinada arquitectura se trata como un modo de direccionamiento, puede 
+                representar la funcionalidad que en otra arquitectura está cubierta por dos o más modos de 
+                direccionamiento.</p>
+            </div>
+            <img src="Images/cpu.jpg" alt="Casos de Estudio de CPU Reales">
+        </section>
+
+        <!-- Navegación entre unidades -->
+        <div class="internal-nav">
+            <a href="Unidad1.html" class="nav-button">← Unidad 1</a>
+            <a href="index.html" class="nav-button">Inicio</a>
+            <a href="Unidad3.html" class="nav-button">Unidad 3 →</a>
+        </div>
+
+        <!-- Botón para volver al inicio -->
+        <div style="text-align: center;">
+            <a href="index.html" class="btn-home">Página Principal</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-name">Jesús Alexander Casas Solís</p>
+            <p class="footer-contact">
+                <a href="mailto:jesusalexandercasas@gmail.com">jesusalexandercasas@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botón volver arriba -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" class="scroll-top-btn" title="Volver arriba">
+        ↑
+    </button>
+
+    <script>
+        // Mostrar/ocultar botón de scroll
+        window.addEventListener('scroll', () => {
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+
+        // Función para volver arriba
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
